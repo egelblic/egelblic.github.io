@@ -1,6 +1,10 @@
 body {
-    background-color: #00005c;
+    background-color: #00003c;
     color: #c7a200;
     font-family: monospace;
     font-size: 14;
+}
+
+a {
+    color: #7f7fff;
 }
