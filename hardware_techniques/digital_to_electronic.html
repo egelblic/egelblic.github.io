@@ -1,0 +1,38 @@
+<html>
+    <head>
+
+<meta charset="UTF-8">
+
+        <link rel="stylesheet" type="text/css" href="/main.css">
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <a href="/index.html">site home</a> &nbsp<h1 id="translating-a-digital-design-to-an-electronic-circuit">Translating a digital design to an electronic circuit</h1>
+<p>You probably do much of your digital design without worrying too much about the properties of electronics, but sooner or later, it comes time to build the thing, and you need to know how to choose your electronics. Fortunately, there’s a simple procedure.</p>
+<p>Let’s say you have a digital design, such as …</p>
+<p>This full adder!</p>
+<p>Conveniently, converting from a high-level digital design, to a circuit schematic, can be broken down into a series of steps.</p>
+<p><img src="/images/full_adder.png" /></p>
+<h2 id="step-1-see-if-the-circuit-can-be-converted-to-use-simpler-components">Step 1: see if the circuit can be converted to use simpler components</h2>
+<p>This isn’t entirely necessary, but it can save you components and space, and it means you don’t need to stock up on quite as many types of chips. I’ll go into the details <a href="digital_techinques/logic_simplification">here</a>, but for now…</p>
+<p>With 74-series (what I recommend for simple logic like this), a single chip will usually have a few of the same type of gate. For instance, that 3-input XOR gates come on chips of 3, and all 2-input gates come in chips of 4. So the above design will use at minimum 3 chips, 1 for XOR, 1 for AND, and 1 for OR.</p>
+<p>But, we can save a chip by converting the bottom circuit to 3 NAND gates:</p>
+<p><img src="/images/full_adder_nand.png" /></p>
+<h2 id="step-2-select-your-components">Step 2: select your components</h2>
+<p>I’m gonna go with a very standard component selection: a 74LS00 4x 2-input NAND gate, and a 74LS86 4x 2-input XOR gate. (Wikipedia has <a href="https://en.wikipedia.org/wiki/List_of_7400-series_integrated_circuits">a list of 74-series part numbers</a>)</p>
+<p>Here’s the datasheets for these chips:</p>
+<ul>
+<li><a href="https://www.ti.com/lit/ds/symlink/sn74ls00.pdf">SN74LS00N</a></li>
+<li><a href="https://www.jameco.com/Jameco/Products/ProdDS/48098.pdf">DM74LS86N</a></li>
+</ul>
+<h2 id="step-3-design-the-circuit-schematic">Step 3: design the circuit schematic</h2>
+<p>This is a simple matter of copying your digital logic into an electronics schematic, except that instead of free- floating gates, you’re using gates that are a part of the chip. Which pins correspond to the input and output of each gate, should be on the datasheet.</p>
+<h2 id="step-4-add-power-and-ground">Step 4: add power and ground</h2>
+<p>How to design the schematic depends on the designer. I design mine, to primarily show which pins get connected together in a physical layout, but there are tons of styles. As long as your schematic doesn’t lie, you’re fine.</p>
+<h2 id="step-5-tie-unused-inputs-low">Step 5: tie unused inputs low</h2>
+<p>This isn’t essential for TTL (this is the main reason I prefer 74LS chips over 74HC/HCT), but it’s critical with CMOS (otherwise you could fry the chip), and it’s a good idea either way. You don’t need to worry about unused outputs.</p>
+&nbsp;
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+</body>
+</html>

@@ -57,23 +57,20 @@ insidious problem:
 ## Problem 2: corrupted signal voltage.
 
 Logic gates aren't designed to expect any possible voltage.  Instead, they have 3 main voltage ranges for their
-inputs: the 0 and 1 levels of digital logic, and an invalid range in between.  This invalid range isn't meant
-to be used, and devices are designed for their inputs to only be in this range briefly, when their input
-crosses from 1 to 0 (or vice versa).
-
-The maximum voltage that will reliably be read as a logic `0` is referred to as $V_{IL}$, and the lowest voltage
-that will be read as a `1` is $V_{IH}$.  The exact values of these voltages depends on the exact chip, and they're
-typically specified in the datasheet.
-
-The outputs also have corresponding values, $V_{OH}$ and $V_{OL}$, indicating (respectively) the lowest voltage
-the device will output to indicate a 1, and the highest value it'll output to indicate a 0.
+inputs: the 0 and 1 levels of digital logic, and an invalid range in between.  The details depend on the logic
+gates in question; as an example, An example TTL chip, the [`DM74LS00`](https://www.futurlec.com/74LS/74LS00.shtml), has $V_{IH}=2.0V$ and $V_{OH}
+=2.7V$$.  What this means is, it'll output 2.7V for a logic `1`, but (to allow for noise and bus resistance) it'll
+read anything over 2.0V as a `1`.
 
 (I'll mostly focus on the case of a logic `1` here, because that's where the problem is most
 likely to occur.)
 
-There are 2 general types of chips, that you're likely to use for a digital logic project: TTL and CMOS.
-An example TTL chip, the [`DM74LS00`](https://www.futurlec.com/74LS/74LS00.shtml), has $V_{IH}=2.0V$ and $V_{OH}
-=2.7V$$, with other TTL chips being similar;
-while CMOS chips usually have $V_{IH} \approx V_{OH} \approx V_{DD}$, where $V_{DD}$ is the power supply
-voltage.
+You'll notice, this 2.0V threshold for a 1 to be read, is exactly the voltage drop for my LEDs, which means
+that if yours have a slightly lower voltage drop, or your chips have a slightly higher $V_{IH}$, or there is
+any voltage lost in the bus, you won't get reliable behavior.  
 
+Best-case, you'll get a random value of either 1 or 0.  But, worst-case, you can draw extreme ammounts of power
+and even damage the chip, especially with [CMOS](/logic_families/cmos.html), due to how they connect their
+output to either $V_{dd}$ or $V_{ss}$, and if you accidentally provide a voltage they aren't expecting, you can
+cause them to accidentally connect their outputs to both, creating a short.  (During normal operation, this
+briefly happens during switching; it's responsible for most CMOS power consumption.)

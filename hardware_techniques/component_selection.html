@@ -1,0 +1,30 @@
+<html>
+    <head>
+
+<meta charset="UTF-8">
+
+        <link rel="stylesheet" type="text/css" href="/main.css">
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <a href="/index.html">site home</a> &nbsp<h1 id="component-selecton">Component selecton</h1>
+<p>One of the most daunting parts of digital design, is choosing the components you’ll use, simply because there are sooooo many that seem to do the same thing. As an example, let me go pull up a <a href="https://www.jameco.com/shop/StoreCatalogDrillDownView?langId=-1&amp;storeId=10001&amp;catalogId=10001&amp;freeText=NAND%20gate&amp;search_type=jamecoall">Jameco search for NAND gates</a>, aaand</p>
+<p><img src="/images/jameco_nand_search.png" /></p>
+<p>Yup, 65 results. That’s gonna be daunting, especially if you don’t know the difference between a 74LS00, a CD4011, and a 74HC00, but fortunately, sites like Jameco have a search filter tool. Fortunately, this particular case is pretty simple: I recommend 74LS, because it’s fairly hard to screw up.</p>
+<h2 id="compatibility">Compatibility</h2>
+<p>If you’re using devices from the same logic family (e.x. TTL devices such as 74LS, or CMOS devices such as 74HC), you’ll be fine. (I should note: these logic families aren’t a hard and fast rule - 74HCT, not to be confused with 74HC, uses TTL levels for compatibility, even though it’s logic is CMOS.)</p>
+<p>The main thing you need to check is the signal voltages each device uses.</p>
+<p>Each device has 4 voltages: <span class="math inline">\(V_{IH}\)</span>, $V_{OH}, <span class="math inline">\(V_{IL}\)</span>, and <span class="math inline">\(V_{OL}\)</span>, and you need to make sure that these are compatible. In short, make sure that <span class="math inline">\(V_{OH}&gt;V_{IH}\)</span>, and <span class="math inline">\(V_{OL}&lt;V_{IL}\)</span>.</p>
+<p>TTL commonly has much wider ranges than CMOS, and since CMOS can tend to draw very high power levels if its inputs are out of range, it’s best to be careful.</p>
+<p>As an example of the ranges used by a variety of logic families, take this chart from StackExchange, though note that none of the ranges are a hard and fast rule:</p>
+<p><img src="https://i.stack.imgur.com/au4vN.png" /></p>
+<h2 id="a-word-on-breaking-stuff">A word on breaking stuff</h2>
+<p>I have some bad news and some good news.</p>
+<p>The bad news: <strong>you are going to break somethng</strong>, eventually.</p>
+<p>The good news: <strong>components are inexpensive.</strong> Those 74x chips are a dollar each.</p>
+<p>You’ll do a lot more learning, and have a lot more fun, breaking the occasional component, than you will obsessing over whether or not two components are compatible. Save the obsessing over breaking stuff, for your boss.</p>
+&nbsp;
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+</body>
+</html>

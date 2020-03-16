@@ -14,9 +14,10 @@ is organized as an academic course - great if you're a professor, but not if you
 overview or, conversely, an in-depth exploration of everything.  It's also pigeon-holed to a
 specific project, and not suitable for people interested in other areas of digital design.)
 
-Right now I just have hosting, the CSS, and a Makefile to make working on the site simple.
+I'm currently working on the beginnings of the content, starting with the biggest gaps I've noticed in existing
+media.
 
 You can see the initially planned organization below (please excuse the light theme):
 
-<img src="sitemap.svg" width=100% height=auto/>
-<!-- <object data="sitemap.svg" type="image/svg+xml"> </object> -->
+<!-- <img src="sitemap.svg" width=100% height=auto/> -->
+<object data="sitemap.svg" type="image/svg+xml"> </object>

@@ -1,7 +1,16 @@
 # Index
 
-Hello from index.html
+## About
+
+- [About this site](about/about_this_site.html)
+- [About the creator](about/about_the_creator.html)
+- [License](about/license.html)
 
 ## [hardware](hardware)
 
 - [A word on LEDs and resistors](led_resistor.html)
+- [Translating a digital design to an electronic circuit](hardware_techniques/digital_to_electronic.html)
+
+## Hardware techniques
+
+- [Component selection](hardware_techniques/component_selection.html)

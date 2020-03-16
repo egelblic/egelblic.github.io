@@ -7,7 +7,8 @@ It's a general description of how digital logic can be assembled into a computer
 worth a read for anyone with the privilege of dropping a few dollars on a book.  While the book is
 of quality, it does have three main differences from this site's goal:
 
-0. It's a print book.  While that medium works for a lot of people, it has its limits.
+0. It's a print book, though with ebooks available.  
+   While that medium works for a lot of people, it has its limits.
 1. This book is primarily discussing a computer contrived strictly for the purposes of its explanation,
    and while that computer is explained in its entirety, the book doesn't make much reference to real
    systems.
@@ -22,12 +23,13 @@ an entire playlist regarding the construction of a simple 8-bit computer.  While
 isolation has many of the same criticisms as <u>But How Do It Know</u>, (1) it's free, and (2) it
 doesn't exist in a vacuum - this creator's other content ranges from a [VGA driver made entirely
 of logic gates and ROM](https://www.youtube.com/watch?v=LnzuMJLZRdU&list=PLowKtXNTBypFbtuVMUVXNR0z1mu7dp7eH), to more sophisticated projects about basic
-computer designs using existing but still very simple computers like
+computer design principles using existing but still very simple computers like
 [Arduinos](https://www.youtube.com/watch?v=eq5YpKHXJDM&list=PLowKtXNTBypFWff2QjXCWuSfJDWcvE0Vm) and
 [the historic 6502](https://www.youtube.com/watch?v=LnzuMJLZRdU&list=PLowKtXNTBypFbtuVMUVXNR0z1mu7dp7eH).
 Also of note, is the fact that these aren't just designs in a book or simulations in a computer - Ben
 Eater actually builds these devices on camera, and even
-[assembles kits for you to follow along](https://eater.net/shop).
+[assembles kits for you to follow along](https://eater.net/shop).  If you want a more guided hands-on
+experience, then check this out.
 
 ## [Nand2Tetris](https://www.nand2tetris.org)
 
