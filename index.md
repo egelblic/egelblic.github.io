@@ -14,3 +14,8 @@
 ## Hardware techniques
 
 - [Component selection](hardware_techniques/component_selection.html)
+
+## Other similar resources
+
+- [A collection of online resources](/other_resources/other_resources.html)
+- [But How Do It Know](/other_resources/but_how_do_it_know.html)
