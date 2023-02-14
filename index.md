@@ -8,8 +8,6 @@ Regular touchscreens are great, but they have one massive problem.  You can't us
 
 ## How it works
 
-(stylized schematic goes here)
-
 <svg height=300 width=100>
 	<rect x = 40 y = 0 width=10 height=300 style="fill:rgb(0,255,0)" />
 	<rect x = 50 y = 0 width=10 height=300 style="fill:rgb(0,0,255)" />
