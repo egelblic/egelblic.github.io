@@ -39,8 +39,20 @@ Regular touchscreens are great, but they have one massive problem.  You can't us
 	<text x=90 y=290 fill="white">&lt;- motor</text>
 </svg>
 
-<!--TODO enlarge, add key-->
+<img src=software.svg />
 
 The touchback screen uses a regular capacitive touch screen, mounted on a force sensor.  The capacitive screen tracks where the user's finger is, and a series of vibration motors give feedback whenever the user's finger moves between parts of the interfact.  When the user presses firmly on the screen, the force sensor registers that as a press, which is signalled to the user via the same vibration motors.
 
 ## How to get one
+
+## Who built it
+
+- Emmeryn Maria Gelblicht (she/her)
+  - B.S. Computer Engineering @ UCSD
+		- Graduating June 2023 (planned)
+- Lei Chen
+	- B.S. Math&CS @UCSD
+	- ECE 196 
+- William Tsui
+  - B.S. Electrical Engineering @ UCSD
+	  - Graduating June 2024 (planned)
